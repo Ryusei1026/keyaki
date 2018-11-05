@@ -3,7 +3,6 @@ package get
 import (
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -14,17 +13,16 @@ import (
 func Errorhandle(chara string, s *goquery.Selection) {
 	s.Find("div").Each(func(_ int, t *goquery.Selection) {
 		s2, _ := t.Attr("style")
-		log.Print(s2)
 		if s2 == "text-align: start;" {
 			t.Find("img").Each(func(_ int, u *goquery.Selection) {
-				url, _ := u.Attr("src")
-				GetImage(chara, url) //画像をダウンロードするための関数へ渡す
+				page, _ := u.Attr("src")
+				GetImage(chara, page) //画像をダウンロードするための関数へ渡す
 			})
 		}
 	})
 }
 
-func GetImage(chara, url string) { //画像ダウンロード
+func GetImage(chara string, url string) { //画像ダウンロード
 	response, err := http.Get(url)
 	if err != nil {
 		panic(chara)

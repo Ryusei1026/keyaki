@@ -38,7 +38,7 @@ const U = "http://www.keyakizaka46.com/s/k46o/diary/member/list?ima=0000&ct="
 var wait1 sync.WaitGroup
 
 func Kanzi() {
-	var chara = []string{"nizika", "zumiko", "uemu-", "ozeki", "oda", "michan", "yuipon", "saitou", "satoshi", "manaka", "yukka", "suzumon", "na-ko", "habuchan", "aoi", "techi", "akanen", "yone", "berika",
+	var chara = []string{"nizika", "zumiko", "uemu-", "ozeki", "oda", "michan", "yuipon", "saitou", "satoshi", "manaka", "yukka", "suzumon", "na-ko", "habuchan", "aoi", "techi", "yone", "berika",
 		"berisa", "neru"}
 
 	start := time.Now()
